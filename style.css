@@ -39,6 +39,11 @@ body{
     background-color: #6B7280;
 }
 
+.clear {
+    margin-top: 5px;
+    flex-shrink: 2;
+}
+
 #buttons {
     display: flex;
     flex-direction: column;
