@@ -46,12 +46,18 @@ operatorBtn.forEach((op) => {
 
 equalBtn.addEventListener("click", () => {
     if(currentNum !== "" && previousNum !== ""){
-        handleEqual();
-        previousNum = currentNum;
-        currentNum = "";
-        operator = "";
-        currentScreen.textContent = previousNum;
-        previousScreen.textContent = "";
+        if (operator === "/" && currentNum === "0"){
+            handleClear();
+            alert("Nice try... you cant divide by 0!");
+        } else {
+            handleEqual();
+            previousNum = currentNum;
+            currentNum = "";
+            operator = "";
+            currentScreen.textContent = previousNum;
+            previousScreen.textContent = "";
+        }
+        
     }
 })
 
@@ -83,6 +89,7 @@ const handleEqual = () => {
     currentNum = Number(currentNum);
     previousNum = Number(previousNum);
 
+    
     if(operator === "+"){
         currentNum += previousNum;
     } else if (operator === "-"){
