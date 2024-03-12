@@ -105,9 +105,11 @@ const handleEqual = () => {
 
     currentNum = currentNum.toString()
     if(currentNum.length >= 10){
-        currentNum = Math.round(currentNum * 1000) / 1000
+        currentNum = Math.round(Number(currentNum) * 1000) / 1000
         currentNum += "..."
     }
+
+    currentNum = currentNum.toString()
     previousNum = previousNum.toString()
 }
 
