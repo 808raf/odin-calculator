@@ -61,6 +61,10 @@ equalBtn.addEventListener("click", () => {
     }
 })
 
+decimalBtn.addEventListener("click", () => {
+    handleDecimal();
+})
+
 // Global Variables
 
 let operator = "";
@@ -89,7 +93,6 @@ const handleEqual = () => {
     currentNum = Number(currentNum);
     previousNum = Number(previousNum);
 
-    
     if(operator === "+"){
         currentNum += previousNum;
     } else if (operator === "-"){
@@ -101,5 +104,15 @@ const handleEqual = () => {
     }
 
     currentNum = currentNum.toString()
+    if(currentNum.length >= 10){
+        currentNum = Math.round(currentNum * 1000) / 1000
+        currentNum += "..."
+    }
     previousNum = previousNum.toString()
+}
+
+const handleDecimal = () => {
+    if(!currentNum.includes(".")){
+        currentNum += ".";
+    }
 }
