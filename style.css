@@ -22,13 +22,26 @@ body{
     border-radius: 10px;
 }
 
-#display {
+.display-container {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     background-color: lightgreen;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
+    height: 70px;
+}
+
+.current-screen,
+.previous-screen {
+  background-color: lightgreen;
+}
+
+.display-result {
+    display: flex;
+    background-color: lightgreen;
 }
 
 .row {
@@ -40,7 +53,7 @@ body{
 }
 
 .clear {
-    margin-top: 5px;
+    margin-top: 10px;
     flex-shrink: 2;
 }
 
